@@ -1,0 +1,54 @@
+<!-- Header component -->
+<header class="header">
+  <div class="logo"><a href="/">LOGO</a></div>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" />
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+  <nav class="nav">
+    <a href="/">Inicio</a>
+    <a href="/servicios">Servicios</a>
+    <a href="/proyectos">Proyectos</a>
+    <a href="/nosotros">Nosotros</a>
+    <a href="/contacto">Contacto</a>
+    <a href="#contacto" class="cta">Solicita tu cotización</a>
+  </nav>
+</header>
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+  }
+  .logo a {font-weight:600; font-size:1.2rem; text-decoration:none; color:#212121;}
+  .nav {
+    display: flex; gap: 1rem; align-items: center;
+  }
+  .nav a {text-decoration:none; color:#212121; font-weight:500;}
+  .nav a.cta {background:#1e3a8a; color:#fff; padding:0.5rem 1rem; border-radius:2px;}
+  .nav a.cta:hover {opacity:0.9;}
+  /* Mobile */
+  .nav-toggle {display:none;}
+  .nav-toggle-label {display:none; cursor:pointer;}
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display:block; background:#212121; height:2px; width:24px; border-radius:2px; position:relative;}
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {content:''; position:absolute; left:0;}
+  .nav-toggle-label span::before {top:-8px;}
+  .nav-toggle-label span::after {top:8px;}
+  @media (max-width: 768px) {
+    .nav {display:none; flex-direction:column; background:#fff; position:absolute; top:100%; left:0; width:100%; padding:1rem;}
+    .nav a {padding:0.5rem 0;}
+    .nav-toggle {display:none;}
+    .nav-toggle:checked + .nav-toggle-label + .nav {display:flex;}
+    .nav-toggle-label {display:block;}
+  }
+</style>
