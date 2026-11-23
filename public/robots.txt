@@ -1,0 +1,12 @@
+# robots.txt para APEX AUTO STUDIO
+User-agent: *
+Allow: /
+
+# Bloqueo de rutas internas o administrativas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?*preview=
+Disallow: /*?*utm_*
+
+# Mapa del sitio
+Sitemap: https://apexautostudio.pe/sitemap.xml
