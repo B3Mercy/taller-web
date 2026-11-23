@@ -1,24 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Values from '../components/Values.astro';
-import Services from '../components/Services.astro';
-import About from '../components/About.astro';
-import Gallery from '../components/Gallery.astro';
-import ContactForm from '../components/ContactForm.astro';
-import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
   <Header />
   <main class="container">
-    <Hero />
-    <Values />
-    <Services />
-    <About />
-    <Gallery />
-    <ContactForm />
+    <section class="hero" aria-labelledby="titulo">
+      <h1 id="titulo">Cuidado y protección para tu auto</h1>
+      <p>En Taller Auto cuidamos el exterior y el interior de tu vehículo.</p>
+      <a class="button" href="#servicios">Conoce nuestros servicios</a>
+    </section>
+    <section id="servicios" aria-labelledby="titulo-servicios">
+      <h2 id="titulo-servicios">Servicios</h2>
+      <ul>
+        <li>Tratamiento de pintura</li>
+        <li>Película de protección de pintura (PPF)</li>
+        <li>Protección de bajos (undercoating)</li>
+        <li>Lavado de salón</li>
+      </ul>
+    </section>
   </main>
-  <Footer />
 </Layout>
+
+<style>
+  .hero {
+    padding-block: clamp(3rem, 8vw, 6rem);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  h1 {
+    max-width: 20ch;
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1.1;
+  }
+
+  .button {
+    margin-top: 1.25rem;
+  }
+
+  #servicios {
+    padding-block: 2rem 3rem;
+    scroll-margin-top: 4rem;
+  }
+
+  ul {
+    padding-inline-start: 1.25rem;
+  }
+</style>
